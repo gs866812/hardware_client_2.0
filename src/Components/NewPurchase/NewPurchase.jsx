@@ -303,7 +303,7 @@ const NewPurchase = () => {
       return toast.error("Invalid mobile number");
     }
     const finalPayAmount = parseFloat(parseFloat(payAmount).toFixed(2));
-    const balance = mainBalance[0]?.mainBalance || 0;
+    const balance = mainBalance[0]?.mainBalance;
 
     if (finalPayAmount > balance) {
       setIsLoading(false); // Reset loading state

@@ -82,7 +82,7 @@ const TradeReturn = () => {
       .then((res) => {
         let fetchedInvoice = res.data;
 
-        // Check if payAmount is greater than grandTotal
+        // Check if finalPayAmount is greater than grandTotal
         if (fetchedInvoice.finalPayAmount >= fetchedInvoice.grandTotal) {
           fetchedInvoice.finalPayAmount = fetchedInvoice.grandTotal;
         }

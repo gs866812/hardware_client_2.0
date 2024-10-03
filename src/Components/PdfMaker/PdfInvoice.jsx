@@ -188,12 +188,12 @@ const PdfInvoice = () => {
                 {parseFloat(invoice.finalPayAmount).toFixed(2)}
               </td>
             </tr>
-            <tr>
-              <td>{invoice.refund >= 0?
+            <tr className={`${invoice.refund <= 0 && invoice.dueAmount <= 0? 'hidden': ''}`}>
+              <td>{invoice.refund > 0?
               'Refund after deductions' : 'Due Amount'
               }</td>
               <td className="text-right">
-                {invoice.refund >= 0?
+                {invoice.refund > 0?
                 `${parseFloat(invoice.refund).toFixed(2) || 0 }` : `${parseFloat(invoice.dueAmount).toFixed(2) || 0 }`
                 }
               </td>
